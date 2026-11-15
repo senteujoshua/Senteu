@@ -874,6 +874,127 @@ body {
 }
 
 /* ============================================
+   WEBSITES
+   ============================================ */
+.websites {
+    background: var(--dark-1);
+    border-top: 1px solid rgba(74, 92, 106, 0.12);
+}
+
+.section-intro {
+    max-width: 640px;
+    margin-top: 16px;
+    font-size: 1rem;
+    color: var(--light);
+    line-height: 1.8;
+}
+
+.websites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.site-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    background: var(--dark-2);
+    border: 1px solid rgba(74, 92, 106, 0.12);
+    border-radius: 20px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.site-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.site-card:hover {
+    border-color: rgba(74, 92, 106, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 60px rgba(6, 20, 27, 0.4);
+}
+
+.site-card:focus-visible {
+    outline: 2px solid var(--light);
+    outline-offset: 4px;
+}
+
+.site-card .project-badge {
+    align-self: flex-start;
+}
+
+.site-card h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--lightest);
+    margin-bottom: 6px;
+}
+
+.site-meta {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+}
+
+.site-desc {
+    font-size: 0.9rem;
+    color: var(--light);
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.site-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid rgba(74, 92, 106, 0.15);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--lightest);
+    overflow-wrap: anywhere;
+}
+
+.site-link svg {
+    flex-shrink: 0;
+    color: var(--light);
+}
+
+.site-link svg:last-child {
+    margin-left: auto;
+    transition: transform 0.3s ease;
+}
+
+.site-card:hover .site-link svg:last-child {
+    transform: translate(2px, -2px);
+}
+
+.site-card-cta {
+    background: transparent;
+    border: 1px dashed rgba(155, 168, 171, 0.35);
+}
+
+.site-card-cta:hover {
+    background: rgba(37, 55, 69, 0.2);
+    border-color: var(--light);
+}
+
+.site-card-cta:hover .site-link svg:last-child {
+    transform: translateX(3px);
+}
+
+/* ============================================
    ACHIEVEMENTS
    ============================================ */
 .achievements {
@@ -1150,7 +1271,8 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+/* Collapse the menu before the links run out of room */
+@media (max-width: 960px) {
     .nav-toggle {
         display: flex;
     }
@@ -1177,7 +1299,9 @@ body {
         width: 100%;
         padding: 12px 16px;
     }
+}
 
+@media (max-width: 768px) {
     .hero-stats {
         gap: 32px;
     }
@@ -1245,6 +1369,10 @@ body {
     }
 
     .project-card-inner {
+        padding: 24px;
+    }
+
+    .site-card {
         padding: 24px;
     }
 }

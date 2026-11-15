@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Observe all elements with data-aos attribute or animatable classes
     const animateElements = document.querySelectorAll(
-        '.skill-category, .timeline-item, .project-card, .achievement-card, .education-card'
+        '.skill-category, .timeline-item, .project-card, .site-card, .achievement-card, .education-card'
     );
     animateElements.forEach(el => observer.observe(el));
 
