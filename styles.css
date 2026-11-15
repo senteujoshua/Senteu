@@ -1,28 +1,48 @@
 /* ============================================
    JOSHUA SENTEU - PORTFOLIO
-   Navy, cool white and saffron.
+   Navy, cream and coral.
    Fraunces for headings, Instrument Sans for text,
    JetBrains Mono for web addresses only.
    ============================================ */
 
 :root {
-    --navy: #0E1A33;
-    --navy-deep: #0A1428;
-    --navy-soft: #17264A;
-    --ground: #F5F6F8;
-    --surface: #FFFFFF;
-    --text: #101828;
-    --muted: #56607A;
-    --line: rgba(14, 26, 51, 0.14);
-    --line-strong: rgba(14, 26, 51, 0.32);
-    --saffron: #FFB224;
-    --saffron-tint: rgba(255, 178, 36, 0.22);
-    --on-navy: #F3F5F9;
-    --on-navy-muted: #AEB8CC;
-    --line-navy: rgba(243, 245, 249, 0.16);
+    /* Three colours: navy 60%, cream 30%, coral 10% */
+    --ink: #14213D;
+    --ink-deep: #0F1930;
+    --ink-soft: #1D2D52;
+    --cream: #F4EDE0;
+    --cream-muted: #B8BCC6;
+    --coral: #FF6B5B;
+    --coral-hover: #FF8577;
+    --coral-tint: rgba(255, 107, 91, 0.18);
+    --rule-on-ink: rgba(244, 237, 224, 0.16);
+
+    /* Section colours: navy sections by default */
+    --bg: var(--ink);
+    --panel: var(--ink-soft);
+    --fg: var(--cream);
+    --fg-muted: var(--cream-muted);
+    --rule: rgba(244, 237, 224, 0.16);
+    --rule-strong: rgba(244, 237, 224, 0.42);
+    --accent: var(--coral);
+
     --font-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
     --font-main: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+}
+
+/* Cream sections */
+.about,
+.projects,
+.contact,
+.navbar.scrolled {
+    --bg: var(--cream);
+    --panel: rgba(20, 33, 61, 0.07);
+    --fg: var(--ink);
+    --fg-muted: #4A5468;
+    --rule: rgba(20, 33, 61, 0.16);
+    --rule-strong: rgba(20, 33, 61, 0.38);
+    --accent: var(--ink);
 }
 
 *, *::before, *::after {
@@ -39,21 +59,21 @@ html {
 body {
     font-family: var(--font-main);
     font-size: 17px;
-    background-color: var(--ground);
-    color: var(--text);
+    background-color: var(--ink);
+    color: var(--cream);
     line-height: 1.65;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-    background: var(--saffron);
-    color: var(--navy);
+    background: var(--coral);
+    color: var(--ink);
 }
 
 a:focus-visible,
 button:focus-visible {
-    outline: 2px solid var(--saffron);
+    outline: 2px solid var(--coral);
     outline-offset: 3px;
     border-radius: 4px;
 }
@@ -79,8 +99,8 @@ button:focus-visible {
 }
 
 .navbar.scrolled {
-    background: var(--surface);
-    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
     padding: 12px 0;
 }
 
@@ -98,15 +118,15 @@ button:focus-visible {
     font-size: 1.6rem;
     font-weight: 600;
     text-decoration: none;
-    color: var(--on-navy);
+    color: var(--cream);
 }
 
 .nav-logo .accent {
-    color: var(--saffron);
+    color: var(--coral);
 }
 
 .navbar.scrolled .nav-logo {
-    color: var(--navy);
+    color: var(--fg);
 }
 
 .nav-menu {
@@ -118,7 +138,7 @@ button:focus-visible {
 
 .nav-link {
     text-decoration: none;
-    color: var(--on-navy-muted);
+    color: var(--cream-muted);
     font-size: 0.92rem;
     font-weight: 500;
     padding: 8px 14px;
@@ -128,30 +148,30 @@ button:focus-visible {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--on-navy);
+    color: var(--cream);
 }
 
 .navbar.scrolled .nav-link {
-    color: var(--muted);
+    color: var(--fg-muted);
 }
 
 .navbar.scrolled .nav-link:hover,
 .navbar.scrolled .nav-link.active {
-    color: var(--navy);
+    color: var(--fg);
 }
 
 .nav-menu .nav-cta,
 .navbar.scrolled .nav-menu .nav-cta {
-    background: var(--saffron);
-    color: var(--navy);
+    background: var(--coral);
+    color: var(--ink);
     font-weight: 600;
     margin-left: 8px;
 }
 
 .nav-menu .nav-cta:hover,
 .navbar.scrolled .nav-menu .nav-cta:hover {
-    background: #FFC24F;
-    color: var(--navy);
+    background: var(--coral-hover);
+    color: var(--ink);
 }
 
 .nav-toggle {
@@ -171,17 +191,17 @@ button:focus-visible {
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--on-navy);
+    background: var(--cream);
     border-radius: 2px;
     transition: all 0.3s ease;
 }
 
 .navbar.scrolled .nav-toggle span {
-    background: var(--navy);
+    background: var(--fg);
 }
 
 .navbar .nav-toggle.active span {
-    background: var(--on-navy);
+    background: var(--cream);
 }
 
 /* ============================================
@@ -196,8 +216,8 @@ button:focus-visible {
     align-items: center;
     min-height: 100vh;
     padding: 140px max(24px, calc((100% - 1152px) / 2)) 96px;
-    background: var(--navy);
-    color: var(--on-navy);
+    background: var(--ink);
+    color: var(--cream);
 }
 
 .hero-badge {
@@ -205,11 +225,11 @@ button:focus-visible {
     align-items: center;
     gap: 10px;
     padding: 6px 14px;
-    border: 1px solid var(--line-navy);
+    border: 1px solid var(--rule-on-ink);
     border-radius: 999px;
     font-size: 0.85rem;
     font-weight: 500;
-    color: var(--on-navy-muted);
+    color: var(--cream-muted);
     margin-bottom: 36px;
 }
 
@@ -226,7 +246,7 @@ button:focus-visible {
     font-family: var(--font-main);
     font-size: 1.15rem;
     font-weight: 400;
-    color: var(--on-navy-muted);
+    color: var(--cream-muted);
     margin-bottom: 14px;
 }
 
@@ -237,7 +257,7 @@ button:focus-visible {
     font-weight: 500;
     line-height: 0.98;
     letter-spacing: -0.02em;
-    color: var(--on-navy);
+    color: var(--cream);
 }
 
 .hero-subtitle {
@@ -245,7 +265,7 @@ button:focus-visible {
     font-style: italic;
     font-size: clamp(1.3rem, 2.4vw, 1.7rem);
     font-weight: 400;
-    color: var(--on-navy);
+    color: var(--cream);
     margin-top: 22px;
 }
 
@@ -253,7 +273,7 @@ button:focus-visible {
     max-width: 34rem;
     margin-top: 18px;
     font-size: 1.05rem;
-    color: var(--on-navy-muted);
+    color: var(--cream-muted);
 }
 
 .hero-actions {
@@ -277,24 +297,24 @@ button:focus-visible {
 }
 
 .btn-primary {
-    background: var(--saffron);
-    color: var(--navy);
-    border: 1px solid var(--saffron);
+    background: var(--coral);
+    color: var(--ink);
+    border: 1px solid var(--coral);
 }
 
 .btn-primary:hover {
-    background: #FFC24F;
-    border-color: #FFC24F;
+    background: var(--coral-hover);
+    border-color: var(--coral-hover);
 }
 
 .btn-outline {
     background: transparent;
-    color: var(--on-navy);
-    border: 1px solid var(--line-navy);
+    color: var(--cream);
+    border: 1px solid var(--rule-on-ink);
 }
 
 .btn-outline:hover {
-    border-color: var(--on-navy);
+    border-color: var(--cream);
 }
 
 .hero-stats {
@@ -303,7 +323,7 @@ button:focus-visible {
     gap: 16px 48px;
     margin-top: 56px;
     padding-top: 24px;
-    border-top: 1px solid var(--line-navy);
+    border-top: 1px solid var(--rule-on-ink);
 }
 
 .stat-number,
@@ -312,13 +332,13 @@ button:focus-visible {
     font-size: 2rem;
     font-weight: 500;
     line-height: 1;
-    color: var(--on-navy);
+    color: var(--cream);
 }
 
 .stat-label {
     display: block;
     font-size: 0.9rem;
-    color: var(--on-navy-muted);
+    color: var(--cream-muted);
     margin-top: 6px;
 }
 
@@ -332,7 +352,7 @@ button:focus-visible {
 
 .hero-sites-title {
     font-size: 0.9rem;
-    color: var(--on-navy-muted);
+    color: var(--cream-muted);
     margin-bottom: 4px;
 }
 
@@ -342,12 +362,12 @@ button:focus-visible {
     gap: 10px;
     min-height: 48px;
     padding: 10px 16px;
-    background: var(--navy-soft);
-    border: 1px solid var(--line-navy);
+    background: var(--ink-soft);
+    border: 1px solid var(--rule-on-ink);
     border-radius: 999px;
     font-family: var(--font-mono);
     font-size: 0.84rem;
-    color: var(--saffron);
+    color: var(--coral);
     text-decoration: none;
     overflow-wrap: anywhere;
     transition: border-color 0.2s ease;
@@ -358,7 +378,7 @@ button:focus-visible {
 }
 
 .address-bar:hover {
-    border-color: var(--saffron);
+    border-color: var(--coral);
 }
 
 .address-bar:nth-of-type(even) {
@@ -370,12 +390,12 @@ button:focus-visible {
     margin-top: 8px;
     font-size: 0.95rem;
     font-weight: 600;
-    color: var(--on-navy);
+    color: var(--cream);
     text-underline-offset: 4px;
 }
 
 .hero-sites-more:hover {
-    color: var(--saffron);
+    color: var(--coral);
 }
 
 @keyframes rise {
@@ -391,7 +411,9 @@ button:focus-visible {
     padding: 104px 0;
     position: relative;
     z-index: 1;
-    border-top: 1px solid var(--line);
+    background: var(--bg);
+    color: var(--fg);
+    border-top: 1px solid var(--rule);
 }
 
 .section > .container {
@@ -412,27 +434,22 @@ button:focus-visible {
     font-weight: 500;
     line-height: 1.1;
     letter-spacing: -0.01em;
-    color: var(--navy);
+    color: var(--fg);
 }
 
 .section-intro {
     margin-top: 16px;
     max-width: 40rem;
-    color: var(--muted);
+    color: var(--fg-muted);
 }
 
 h3 {
     font-family: var(--font-display);
     font-weight: 500;
     line-height: 1.2;
-    color: var(--navy);
+    color: var(--fg);
 }
 
-.skills,
-.projects,
-.education {
-    background: var(--surface);
-}
 
 /* ============================================
    ABOUT
@@ -448,12 +465,12 @@ h3 {
     font-family: var(--font-display);
     font-size: 1.5rem;
     line-height: 1.4;
-    color: var(--navy);
+    color: var(--fg);
     margin-bottom: 20px;
 }
 
 .about-text p:not(.about-lead) {
-    color: var(--muted);
+    color: var(--fg-muted);
     margin-bottom: 16px;
 }
 
@@ -462,28 +479,28 @@ h3 {
     align-items: center;
     gap: 14px;
     padding: 16px 0;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--rule);
 }
 
 .detail-card:last-child {
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--rule);
 }
 
 .detail-icon {
     display: flex;
-    color: var(--navy);
+    color: var(--fg);
     flex-shrink: 0;
 }
 
 .detail-label {
     display: block;
     font-size: 0.85rem;
-    color: var(--muted);
+    color: var(--fg-muted);
 }
 
 .detail-value {
     font-weight: 600;
-    color: var(--text);
+    color: var(--fg);
 }
 
 /* ============================================
@@ -495,11 +512,11 @@ h3 {
     gap: 12px 24px;
     align-items: start;
     padding: 24px 0;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--rule);
 }
 
 .skill-category:last-child {
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--rule);
 }
 
 .skill-category-icon {
@@ -518,11 +535,11 @@ h3 {
 
 .skill-tag {
     padding: 5px 14px;
-    border: 1px solid var(--line-strong);
+    border: 1px solid var(--rule-strong);
     border-radius: 999px;
     font-size: 0.92rem;
     font-weight: 500;
-    color: var(--text);
+    color: var(--fg);
 }
 
 /* ============================================
@@ -530,11 +547,11 @@ h3 {
    ============================================ */
 .timeline-item {
     padding: 28px 0;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--rule);
 }
 
 .timeline-item:last-child {
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--rule);
 }
 
 .timeline-marker {
@@ -556,13 +573,13 @@ h3 {
 .timeline-company {
     display: block;
     font-weight: 600;
-    color: var(--text);
+    color: var(--fg);
     margin-top: 4px;
 }
 
 .timeline-date {
     font-size: 0.92rem;
-    color: var(--muted);
+    color: var(--fg-muted);
     white-space: nowrap;
     flex-shrink: 0;
 }
@@ -574,7 +591,7 @@ h3 {
 .timeline-details li {
     position: relative;
     padding-left: 20px;
-    color: var(--muted);
+    color: var(--fg-muted);
     margin-bottom: 6px;
     max-width: 44rem;
 }
@@ -586,7 +603,7 @@ h3 {
     top: 0.75em;
     width: 8px;
     height: 2px;
-    background: var(--saffron);
+    background: var(--coral);
 }
 
 /* ============================================
@@ -601,7 +618,7 @@ h3 {
 .project-card-inner {
     height: 100%;
     padding: 30px;
-    background: var(--ground);
+    background: var(--panel);
     border-radius: 14px;
 }
 
@@ -612,12 +629,12 @@ h3 {
 .project-badge {
     display: inline-block;
     padding: 3px 12px;
-    background: var(--saffron-tint);
-    border: 1px solid var(--saffron);
+    background: var(--coral-tint);
+    border: 1px solid var(--coral);
     border-radius: 999px;
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--navy);
+    color: var(--fg);
     margin-bottom: 14px;
 }
 
@@ -628,13 +645,13 @@ h3 {
 
 .project-subtitle {
     font-weight: 600;
-    color: var(--text);
+    color: var(--fg);
     margin-bottom: 12px;
 }
 
 .project-desc {
     font-size: 0.97rem;
-    color: var(--muted);
+    color: var(--fg-muted);
     margin-bottom: 18px;
 }
 
@@ -647,48 +664,47 @@ h3 {
 
 .project-tech span {
     padding: 2px 10px;
-    border: 1px solid var(--line-strong);
+    border: 1px solid var(--rule-strong);
     border-radius: 999px;
     font-size: 0.82rem;
     font-weight: 500;
-    color: var(--text);
+    color: var(--fg);
 }
 
 .project-date {
     font-size: 0.88rem;
-    color: var(--muted);
+    color: var(--fg-muted);
 }
 
+/* The award-winning project carries the coral */
 .project-featured .project-card-inner {
-    background: var(--navy);
+    background: var(--coral);
 }
 
 .project-featured h3,
-.project-featured .project-subtitle {
-    color: var(--on-navy);
-}
-
+.project-featured .project-subtitle,
 .project-featured .project-desc,
 .project-featured .project-date {
-    color: var(--on-navy-muted);
+    color: var(--ink);
 }
 
 .project-featured .project-badge {
-    color: var(--saffron);
-    background: transparent;
+    color: var(--cream);
+    background: var(--ink);
+    border-color: var(--ink);
 }
 
 .project-featured .project-tech span {
-    border-color: var(--line-navy);
-    color: var(--on-navy);
+    border-color: rgba(20, 33, 61, 0.45);
+    color: var(--ink);
 }
 
 /* ============================================
    WEBSITES - a register of live sites
    ============================================ */
 .websites {
-    background: var(--navy);
-    color: var(--on-navy);
+    background: var(--ink);
+    color: var(--cream);
     border-top: 0;
 }
 
@@ -702,11 +718,11 @@ h3 {
 }
 
 .websites .section-title {
-    color: var(--on-navy);
+    color: var(--cream);
 }
 
 .websites .section-intro {
-    color: var(--on-navy-muted);
+    color: var(--cream-muted);
 }
 
 .site-card {
@@ -721,46 +737,46 @@ h3 {
     gap: 0 40px;
     padding: 28px 16px;
     margin: 0 -16px;
-    border-top: 1px solid var(--line-navy);
+    border-top: 1px solid var(--rule-on-ink);
     border-radius: 0;
     text-decoration: none;
     color: inherit;
     transition: background-color 0.2s ease;
 }
 
-.site-card:last-child {
-    border-bottom: 1px solid var(--line-navy);
+.site-card:nth-last-child(2) {
+    border-bottom: 1px solid var(--rule-on-ink);
 }
 
 .site-card:hover {
-    background: var(--navy-soft);
+    background: var(--ink-soft);
 }
 
 .site-card .project-badge {
     grid-area: badge;
     justify-self: start;
     margin-bottom: 10px;
-    color: var(--saffron);
+    color: var(--coral);
     background: transparent;
 }
 
 .site-card h3 {
     grid-area: name;
     font-size: 1.5rem;
-    color: var(--on-navy);
+    color: var(--cream);
 }
 
 .site-meta {
     grid-area: meta;
     margin-top: 6px;
     font-size: 0.92rem;
-    color: var(--on-navy-muted);
+    color: var(--cream-muted);
 }
 
 .site-desc {
     grid-area: desc;
     font-size: 0.98rem;
-    color: var(--on-navy-muted);
+    color: var(--cream-muted);
 }
 
 .site-card .project-tech {
@@ -769,8 +785,8 @@ h3 {
 }
 
 .site-card .project-tech span {
-    border-color: var(--line-navy);
-    color: var(--on-navy);
+    border-color: var(--rule-on-ink);
+    color: var(--cream);
 }
 
 .site-link {
@@ -781,7 +797,7 @@ h3 {
     gap: 8px;
     font-family: var(--font-mono);
     font-size: 0.82rem;
-    color: var(--saffron);
+    color: var(--coral);
     overflow-wrap: anywhere;
 }
 
@@ -796,6 +812,25 @@ h3 {
 
 .site-card:hover .site-link svg:last-child {
     transform: translate(2px, -2px);
+}
+
+.site-card.site-card-cta {
+    margin-top: 28px;
+    padding: 36px 32px;
+    background: var(--coral);
+    border: 0;
+    border-radius: 14px;
+}
+
+.site-card.site-card-cta:hover {
+    background: var(--coral-hover);
+}
+
+.site-card-cta h3,
+.site-card-cta .site-meta,
+.site-card-cta .site-desc,
+.site-card-cta .site-link {
+    color: var(--ink);
 }
 
 .site-card-cta .site-link {
@@ -819,7 +854,7 @@ h3 {
 
 .achievement-card {
     padding-top: 20px;
-    border-top: 3px solid var(--navy);
+    border-top: 3px solid var(--coral);
 }
 
 .achievement-rank {
@@ -833,18 +868,18 @@ h3 {
 
 .achievement-event {
     font-weight: 600;
-    color: var(--text);
+    color: var(--fg);
 }
 
 .achievement-year {
     font-size: 0.9rem;
-    color: var(--muted);
+    color: var(--fg-muted);
 }
 
 .achievement-desc {
     margin-top: 12px;
     font-size: 0.95rem;
-    color: var(--muted);
+    color: var(--fg-muted);
 }
 
 /* ============================================
@@ -855,16 +890,16 @@ h3 {
     align-items: center;
     gap: 20px;
     padding: 24px 0;
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--rule);
 }
 
 .education-card:last-child {
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--rule);
 }
 
 .education-icon {
     display: flex;
-    color: var(--navy);
+    color: var(--fg);
     flex-shrink: 0;
 }
 
@@ -874,32 +909,22 @@ h3 {
 }
 
 .education-school {
-    color: var(--text);
+    color: var(--fg);
 }
 
 .education-date {
     font-size: 0.9rem;
-    color: var(--muted);
+    color: var(--fg-muted);
 }
 
 /* ============================================
    CONTACT
    ============================================ */
-.contact {
-    background: var(--navy);
-    color: var(--on-navy);
-    border-top: 1px solid var(--line-navy);
-}
-
-.contact .section-title {
-    color: var(--on-navy);
-}
-
 .contact-text {
     font-family: var(--font-display);
     font-size: 1.45rem;
     line-height: 1.4;
-    color: var(--on-navy);
+    color: var(--fg);
     max-width: 38rem;
     margin-bottom: 36px;
 }
@@ -917,31 +942,34 @@ h3 {
     align-items: center;
     min-height: 72px;
     padding: 14px 0;
-    border-top: 1px solid var(--line-navy);
+    border-top: 1px solid var(--rule);
     text-decoration: none;
 }
 
 .contact-icon {
     grid-row: span 2;
     display: flex;
-    color: var(--saffron);
+    color: var(--accent);
 }
 
 .contact-label {
     display: block;
     font-size: 0.85rem;
-    color: var(--on-navy-muted);
+    color: var(--fg-muted);
 }
 
 .contact-value {
     display: block;
     font-weight: 600;
-    color: var(--on-navy);
+    color: var(--fg);
     overflow-wrap: anywhere;
 }
 
 a.contact-card:hover .contact-value {
-    color: var(--saffron);
+    text-decoration: underline;
+    text-decoration-color: var(--coral);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
 }
 
 /* ============================================
@@ -949,8 +977,8 @@ a.contact-card:hover .contact-value {
    ============================================ */
 .footer {
     padding: 36px 0;
-    background: var(--navy-deep);
-    color: var(--on-navy-muted);
+    background: var(--ink-deep);
+    color: var(--cream-muted);
     position: relative;
     z-index: 1;
 }
@@ -965,7 +993,7 @@ a.contact-card:hover .contact-value {
 .footer-logo {
     font-family: var(--font-display);
     font-size: 1.2rem;
-    color: var(--on-navy);
+    color: var(--cream);
 }
 
 .footer p {
@@ -985,14 +1013,14 @@ a.contact-card:hover .contact-value {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 1px solid var(--line-navy);
-    color: var(--on-navy);
+    border: 1px solid var(--rule-on-ink);
+    color: var(--cream);
     transition: border-color 0.2s ease, color 0.2s ease;
 }
 
 .footer-socials a:hover {
-    border-color: var(--saffron);
-    color: var(--saffron);
+    border-color: var(--coral);
+    color: var(--coral);
 }
 
 /* ============================================
@@ -1009,8 +1037,8 @@ a.contact-card:hover .contact-value {
         right: -100%;
         width: 280px;
         height: 100vh;
-        background: var(--navy);
-        border-left: 1px solid var(--line-navy);
+        background: var(--ink);
+        border-left: 1px solid var(--rule-on-ink);
         flex-direction: column;
         align-items: stretch;
         padding: 88px 24px 40px;
@@ -1026,13 +1054,13 @@ a.contact-card:hover .contact-value {
     .navbar.scrolled .nav-menu .nav-link {
         display: block;
         padding: 12px 16px;
-        color: var(--on-navy);
+        color: var(--cream);
     }
 
     .nav-menu .nav-cta,
     .navbar.scrolled .nav-menu .nav-cta {
         margin: 12px 0 0;
-        color: var(--navy);
+        color: var(--ink);
         text-align: center;
     }
 
