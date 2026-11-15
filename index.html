@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0E1A33">
     <title>Joshua Senteu | ML & AI Engineer</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- AI/ML Neural Network Background -->
-    <canvas id="neuralCanvas"></canvas>
-
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -37,7 +35,6 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="hero-bg-grid"></div>
         <div class="hero-content">
             <div class="hero-badge">Available for Opportunities</div>
             <h1 class="hero-title">
@@ -69,9 +66,14 @@
                 </div>
             </div>
         </div>
-        <div class="hero-scroll">
-            <span>Scroll Down</span>
-            <div class="scroll-line"></div>
+        <div class="hero-sites">
+            <p class="hero-sites-title">Live sites I've built</p>
+            <a href="https://www.christines-exoticeats.com.au/" class="address-bar" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>www.christines-exoticeats.com.au</span></a>
+            <a href="https://www.wakandalawncare.com.au/" class="address-bar" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>www.wakandalawncare.com.au</span></a>
+            <a href="https://www.anchornds.com.au/" class="address-bar" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>www.anchornds.com.au</span></a>
+            <a href="https://darwinhastalents.com.au/" class="address-bar" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>darwinhastalents.com.au</span></a>
+            <a href="https://kuriinvestments.co.ke/" class="address-bar" target="_blank" rel="noopener"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>kuriinvestments.co.ke</span></a>
+            <a href="#websites" class="hero-sites-more">See all 11 websites</a>
         </div>
     </section>
 
@@ -79,7 +81,6 @@
     <section class="section about" id="about">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">01 / About</span>
                 <h2 class="section-title">About Me</h2>
             </div>
             <div class="about-grid">
@@ -146,7 +147,6 @@
     <section class="section skills" id="skills">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">02 / Skills</span>
                 <h2 class="section-title">Technical Arsenal</h2>
             </div>
             <div class="skills-grid">
@@ -232,7 +232,6 @@
     <section class="section experience" id="experience">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">03 / Experience</span>
                 <h2 class="section-title">Where I've Worked</h2>
             </div>
             <div class="timeline">
@@ -294,7 +293,6 @@
     <section class="section projects" id="projects">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">04 / Projects</span>
                 <h2 class="section-title">Featured Work</h2>
             </div>
             <div class="projects-grid">
@@ -435,7 +433,6 @@
     <section class="section websites" id="websites">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">05 / Websites</span>
                 <h2 class="section-title">Websites I've Built</h2>
                 <p class="section-intro">
                     Live websites I've designed, built and launched for businesses and
@@ -445,7 +442,7 @@
             <div class="websites-grid">
                 <a href="https://www.christines-exoticeats.com.au/" class="site-card" target="_blank" rel="noopener">
                     <h3>Christine&rsquo;s Exotic Eats</h3>
-                    <p class="site-meta">Catering &middot; Darwin, NT</p>
+                    <p class="site-meta">Catering, Darwin, NT</p>
                     <p class="site-desc">
                         Catalogue of grazing, sandwich and hot savoury boxes for a family-run
                         caterer, with a gallery, reviews, an enquiry form and a
@@ -464,7 +461,7 @@
                 </a>
                 <a href="https://www.wakandalawncare.com.au/" class="site-card" target="_blank" rel="noopener">
                     <h3>Wakanda Lawn Care</h3>
-                    <p class="site-meta">Lawn &amp; Garden Care &middot; Darwin, NT</p>
+                    <p class="site-meta">Lawn &amp; Garden Care, Darwin, NT</p>
                     <p class="site-desc">
                         Services, service areas and online booking for a family-owned lawn
                         care business, with a contact form protected against spam bots.
@@ -482,7 +479,7 @@
                 </a>
                 <a href="https://www.anchornds.com.au/" class="site-card" target="_blank" rel="noopener">
                     <h3>Anchor NDSS</h3>
-                    <p class="site-meta">NDIS Provider &middot; Darwin, NT</p>
+                    <p class="site-meta">NDIS Provider, Darwin, NT</p>
                     <p class="site-desc">
                         Rebuilt website for a registered NDIS nursing and disability support
                         provider, with participant referrals, employment services and
@@ -501,7 +498,7 @@
                 </a>
                 <a href="https://darwinhastalents.com.au/" class="site-card" target="_blank" rel="noopener">
                     <h3>Darwin Has Talent</h3>
-                    <p class="site-meta">Music Competition &middot; Northern Territory</p>
+                    <p class="site-meta">Music Competition, Northern Territory</p>
                     <p class="site-desc">
                         Pre-launch site for a territory-wide music competition, with the
                         audition roadmap, waitlist sign-up and donations.
@@ -519,7 +516,7 @@
                 </a>
                 <a href="https://kuriinvestments.co.ke/" class="site-card" target="_blank" rel="noopener">
                     <h3>Kuri Investments</h3>
-                    <p class="site-meta">Building Aggregates &middot; Nyeri, Kenya</p>
+                    <p class="site-meta">Building Aggregates, Nyeri, Kenya</p>
                     <p class="site-desc">
                         Online store for a stone-crushing company selling ballast,
                         aggregates, hardcore and quarry dust, with nationwide delivery.
@@ -538,7 +535,7 @@
                 <a href="https://www.calmind.co.ke/" class="site-card" target="_blank" rel="noopener">
                     <div class="project-badge">Award Winner</div>
                     <h3>CalMind</h3>
-                    <p class="site-meta">Student Mental Health &middot; Kenya</p>
+                    <p class="site-meta">Student Mental Health, Kenya</p>
                     <p class="site-desc">
                         My platform for university students: confidential counselling with
                         verified counsellors, mood tracking and 24-hour AI support.
@@ -556,7 +553,7 @@
                 </a>
                 <a href="https://ln-healthcare-services.vercel.app/" class="site-card" target="_blank" rel="noopener">
                     <h3>LN Health Care Services</h3>
-                    <p class="site-meta">NDIS Provider &middot; Darwin &amp; Perth</p>
+                    <p class="site-meta">NDIS Provider, Darwin &amp; Perth</p>
                     <p class="site-desc">
                         NDIS provider website with an eligibility checker, NDIS guide,
                         participant referral form and careers page.
@@ -574,7 +571,7 @@
                 </a>
                 <a href="https://fusion-point-solutions.vercel.app/" class="site-card" target="_blank" rel="noopener">
                     <h3>Fusion Point</h3>
-                    <p class="site-meta">Creative &amp; IT Studio &middot; Darwin</p>
+                    <p class="site-meta">Creative &amp; IT Studio, Darwin</p>
                     <p class="site-desc">
                         Showcase site for a studio offering photography, videography, and IT
                         and web services, with a project gallery and contact form.
@@ -591,7 +588,7 @@
                 </a>
                 <a href="https://african-community-iota.vercel.app/" class="site-card" target="_blank" rel="noopener">
                     <h3>African Community NT</h3>
-                    <p class="site-meta">Non-Profit &middot; Darwin &amp; Katherine</p>
+                    <p class="site-meta">Non-Profit, Darwin &amp; Katherine</p>
                     <p class="site-desc">
                         Redesigned site for an African community not-for-profit, with
                         programs, sponsors, membership and AFCON NT tournament registration.
@@ -609,7 +606,7 @@
                 </a>
                 <a href="https://kenyans-in-drw.vercel.app/" class="site-card" target="_blank" rel="noopener">
                     <h3>Kenyans In Darwin</h3>
-                    <p class="site-meta">Community Association &middot; Darwin</p>
+                    <p class="site-meta">Community Association, Darwin</p>
                     <p class="site-desc">
                         A home online for Kenyans across the Top End, with membership,
                         events, leadership and the member welfare fund.
@@ -626,7 +623,7 @@
                 </a>
                 <a href="https://kidaw.vercel.app/" class="site-card" target="_blank" rel="noopener">
                     <h3>KIDAW Welfare Association</h3>
-                    <p class="site-meta">Welfare Association &middot; Darwin</p>
+                    <p class="site-meta">Welfare Association, Darwin</p>
                     <p class="site-desc">
                         Welfare association site with member registration, a member portal
                         and a shared contribution ledger.
@@ -643,7 +640,7 @@
                 </a>
                 <a href="#contact" class="site-card site-card-cta">
                     <h3>Your business could be next</h3>
-                    <p class="site-meta">Websites &middot; Online Stores &middot; Bookings</p>
+                    <p class="site-meta">Websites, Online Stores, Bookings</p>
                     <p class="site-desc">
                         Need a website, an online store or a booking system? Let's talk
                         about what your business needs.
@@ -661,7 +658,6 @@
     <section class="section achievements" id="achievements">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">06 / Achievements</span>
                 <h2 class="section-title">Recognition</h2>
             </div>
             <div class="achievements-grid">
@@ -710,7 +706,6 @@
     <section class="section education" id="education">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">07 / Education</span>
                 <h2 class="section-title">Academic Background</h2>
             </div>
             <div class="education-grid">
@@ -742,7 +737,6 @@
     <section class="section contact" id="contact">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">08 / Contact</span>
                 <h2 class="section-title">Let's Connect</h2>
             </div>
             <div class="contact-content">
