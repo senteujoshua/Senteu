@@ -454,6 +454,16 @@ h3 {
 /* ============================================
    ABOUT
    ============================================ */
+.about-photo {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin-top: 24px;
+    border: 1px solid var(--rule);
+    border-radius: 14px;
+}
+
 .about-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
@@ -676,9 +686,17 @@ h3 {
     color: var(--fg-muted);
 }
 
-/* The award-winning project carries the coral */
+/* The award-winning project carries the coral and spans the full row */
+.project-featured {
+    grid-column: 1 / -1;
+}
+
 .project-featured .project-card-inner {
     background: var(--coral);
+}
+
+.project-featured .project-desc {
+    max-width: 46rem;
 }
 
 .project-featured h3,
@@ -848,8 +866,8 @@ h3 {
    ============================================ */
 .achievements-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 32px;
 }
 
 .achievement-card {
@@ -887,7 +905,7 @@ h3 {
    ============================================ */
 .education-card {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
     padding: 24px 0;
     border-top: 1px solid var(--rule);
@@ -899,6 +917,7 @@ h3 {
 
 .education-icon {
     display: flex;
+    margin-top: 2px;
     color: var(--fg);
     flex-shrink: 0;
 }
@@ -915,6 +934,17 @@ h3 {
 .education-date {
     font-size: 0.9rem;
     color: var(--fg-muted);
+}
+
+.education-note {
+    margin-top: 10px;
+    max-width: 44rem;
+    font-size: 0.95rem;
+    color: var(--fg-muted);
+}
+
+.education-note + .education-note {
+    margin-top: 4px;
 }
 
 /* ============================================
